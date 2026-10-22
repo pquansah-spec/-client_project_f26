@@ -1,0 +1,254 @@
+body {
+  min-height: 100px;
+  font-family: Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #242424;
+  overflow-x: hidden;
+}
+
+header img { display: block; margin: 0 auto; max-width: 100%; height: auto; }
+main img { max-width: 100%; height: auto; }
+
+p { margin:20px; }
+
+h1, h2, h3, h4 {
+  line-height: 1;
+  margin-bottom: 16px;
+  color: #00274C;
+}
+h1 { font-size: 36px; text-align: center; padding-top: 50px;}
+h2 { font-size: 24px;}
+h3 { font-size: 20px; text-align: center}
+h4 { font-size: 18px; }
+
+h2, h3, h4 { padding: 9px 18px; }
+h2, h3, h4 { border-bottom: 4px solid #FFCB05; }
+
+a {
+  color: #2F65A7;
+  font-weight: bold;
+}
+a:hover { text-decoration: underline; }
+
+.skip a {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  padding: 5px 13px;
+  background: #00274C;
+  color: #fff;
+}
+.skip a:focus { top: 0; z-index: 100; }
+
+nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  background: linear-gradient(30deg, #312483, #2F65A7 25%, #267dab 70%, #312483);
+}
+
+
+nav a {
+  display: block;
+  padding: 14px 8px;
+  text-align: center;
+  color: #fff;
+  line-height: 1.2;
+  text-decoration: none;
+  border-bottom: 4px solid transparent;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: #FFCB05 ;
+}
+
+nav a:focus-visible {
+  outline: 3px solid #FFCB05;
+  outline-offset: 2px;
+}
+
+nav a[aria-current="page"] {
+  color: #FFCB05;
+  font-weight: bold;}
+
+main { padding: 3px 16px; }
+section { padding: 5px 0; }
+
+main ul,
+.overly {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0 32px;
+  padding: 0;
+  list-style: none;
+}
+
+.overly > :last-child {
+  grid-column: 1 / -1;
+}
+
+main li {
+  padding: 16px;
+  color: #fff;
+  background: #00274C;
+  border: 5px solid #FFCB05;
+  border-radius: 12px;
+}
+
+main li a { color: #FFCB05;}
+
+main li h3,
+main li h4 {
+  margin-bottom: 12px;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.overly article {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background: #fff;
+  color: #00274C;
+  border: 3px solid #00274C;
+  border-radius: 12px;
+}
+
+.overly h3 {
+  margin-bottom: 12px;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #00274C;
+}
+
+.button {
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 24px;
+  background: #2F65A7;
+  color: #fff;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 1.2;
+  transition: background 0.3s;
+}
+
+.button:focus-visible {
+  outline: 3px solid #FFCB05;
+  outline-offset: 3px;
+}
+
+.overly a.button {
+  text-align: center;
+  background: #FFCB05;
+  color: #00274C;
+  border-right: 10px solid #00274C;
+}
+
+.overly a.button:hover,
+.overly a.button:focus-visible {
+  background: #00274C;
+  color: #fff;
+}
+
+.resources a.button {
+  align-self: flex-start;
+  background: white;
+  color: #00274C;
+  border-color: #FFCB05;
+  border-right: 10px solid #FFCB05;
+}
+
+.resources a.button:hover,
+.resources a.button:focus-visible {
+  background: #FFCB05;
+  border-color: #fff;
+}
+
+aside { padding: 16px 0; }
+aside .button { border-color: #267dab; }
+aside .button:focus-visible { outline-color: #00274C; }
+
+.prep-columns {
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.prep-columns li {
+  padding: 10px;
+  border-width: 3px;
+  font-size: 14px;
+  line-height: 1.4;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+.prep-columns a.button {
+  padding: 8px 10px;
+  font-size: 14px;
+}
+
+.process {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 640px;
+  margin: 16px auto 32px;
+  padding: 0;
+}
+
+.process li {
+  padding: 16px 20px;
+  background: #fff;
+  color: #00274C;
+  border: 3px solid #00274C;
+  border-radius: 12px;
+}
+
+footer {
+  padding-top: 10px;
+  background: linear-gradient(4deg, #312483 -80%, #267dab);
+  color: #fff;
+  text-align: center;
+}
+footer a { color: white}
+footer img { max-width: 100%; height: auto; }
+
+aside { text-align: center; }
+
+
+table {
+  width: 100%;
+  margin: 16px 0 32px;
+  border-collapse: collapse;
+}
+
+caption {
+  padding: 12px;
+  font-size: 20px;
+  text-align: left;
+  color: #00274C;
+}
+
+th, td {
+  padding: 12px;
+  border: 2px solid #00274C;
+  text-align: left;
+  vertical-align: top;
+}
+
+thead th {
+  background: #00274C;
+  color: #fff;
+}
+
+tbody th {
+  background: #fff;
+  color: #00274C;
+}
