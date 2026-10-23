@@ -19,7 +19,7 @@ h1, h2, h3, h4 {
 }
 h1 { font-size: 36px; text-align: center; padding-top: 50px;}
 h2 { font-size: 24px;}
-h3 { font-size: 20px; text-align: center}
+h3 { font-size: 20px;}
 h4 { font-size: 18px; }
 
 h2, h3, h4 { padding: 9px 18px; }
@@ -48,7 +48,8 @@ nav ul {
   margin: 0;
   padding: 8px;
   list-style: none;
-  background: linear-gradient(30deg, #312483, #2F65A7 25%, #267dab 70%, #312483);
+  background: linear-gradient(30deg, #00274C, #2F65A7 25%, #267dab 70%, #00274C); /* Inspired and referenced from gradient navigation header from Artsy Blue and Turquoise
+by Thea Kitzinger, on StyleStage.dev */
 }
 
 
@@ -213,7 +214,10 @@ aside .button:focus-visible { outline-color: #00274C; }
 
 footer {
   padding-top: 10px;
-  background: linear-gradient(4deg, #312483 -80%, #267dab);
+  background: linear-gradient(4deg, #00274C -80%, #267dab); /* Inspired by gradient footer from Artsy Blue and Turquoise
+by Thea Kitzinger, on StyleStage.dev */
+
+
   color: #fff;
   text-align: center;
 }
@@ -227,13 +231,6 @@ table {
   width: 100%;
   margin: 16px 0 32px;
   border-collapse: collapse;
-}
-
-caption {
-  padding: 12px;
-  font-size: 20px;
-  text-align: left;
-  color: #00274C;
 }
 
 th, td {
