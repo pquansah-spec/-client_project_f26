@@ -29,7 +29,24 @@ a {
   color: #2F65A7;
   font-weight: bold;
 }
-a:hover { text-decoration: underline; }
+
+a:hover { text-decoration: underline; text-decoration-thickness: 3px; }
+a:focus-visible { outline: 3px solid #2F65A7; outline-offset: 2px; }
+
+
+main li a { text-decoration: underline; }
+main li a:hover { color: #fff; text-decoration-thickness: 3px; }
+main li a:focus-visible { outline-color: #FFCB05; }
+
+
+.button:hover { background: #00274C; color: #fff; }
+
+main li a.button { text-decoration: none; }
+main li a.button:hover,
+main li a.button:focus-visible {
+  background: #FFCB05;
+  color: #00274C;
+}
 
 .skip a {
   position: absolute;
@@ -52,7 +69,6 @@ nav ul {
 by Thea Kitzinger, on StyleStage.dev */
 }
 
-
 nav a {
   display: block;
   padding: 14px 8px;
@@ -64,45 +80,58 @@ nav a {
 }
 
 nav a:hover {
-  text-decoration: none;
-  color: #FFCB05 ;
+  color: #fff;
+  border-bottom-color: #fff;
 }
 
 nav a:focus-visible {
   outline: 3px solid #FFCB05;
   outline-offset: 2px;
 }
-
-nav a[aria-current="page"] {
-  color: #FFCB05;
-  font-weight: bold;}
+nav a[aria-current="page"]::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+  background: #FFCB05;
+  border: 2px solid #fff;
+}
 
 main { padding: 3px 16px; }
 section { padding: 5px 0; }
 
+
 main ul,
 .overly {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  grid-template-columns: 1fr;
+  gap: 24px;
   margin: 16px 0 32px;
   padding: 0;
   list-style: none;
 }
 
-.overly > :last-child {
-  grid-column: 1 / -1;
-}
-
 main li {
-  padding: 16px;
+  padding: 24px 20px;
+  font-size: 17px;
+  line-height: 1.6;
   color: #fff;
   background: #00274C;
   border: 5px solid #FFCB05;
   border-radius: 12px;
 }
 
-main li a { color: #FFCB05;}
+
+main li a {
+  color: #FFCB05;
+  text-decoration: underline;
+}
+main li a:hover {
+  color: #fff;
+  text-decoration-thickness: 3px;
+}
+main li a:focus-visible { outline-color: #FFCB05; }
 
 main li h3,
 main li h4 {
@@ -115,7 +144,8 @@ main li h4 {
 .overly article {
   display: flex;
   flex-direction: column;
-  padding: 16px;
+  padding: 24px 20px;
+  line-height: 1.6;
   background: #fff;
   color: #00274C;
   border: 3px solid #00274C;
@@ -129,8 +159,25 @@ main li h4 {
   color: #00274C;
 }
 
+.feature {
+  display: grid;
+  gap: 24px;
+  margin: 16px 0 32px;
+}
+.feature ul { margin: 0; }
+.feature img {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+
 .button {
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   min-height: 44px;
   padding: 8px 24px;
   background: #2F65A7;
@@ -138,12 +185,23 @@ main li h4 {
   border-radius: 8px;
   text-align: center;
   line-height: 1.2;
+  text-decoration: none;
   transition: background 0.3s;
 }
-
+.button:hover {
+  background: #00274C;
+  color: #fff;
+}
 .button:focus-visible {
   outline: 3px solid #FFCB05;
   outline-offset: 3px;
+}
+
+main li a.button { text-decoration: none; }
+main li a.button:hover,
+main li a.button:focus-visible {
+  background: #FFCB05;
+  color: #00274C;
 }
 
 .overly a.button {
@@ -152,11 +210,23 @@ main li h4 {
   color: #00274C;
   border-right: 10px solid #00274C;
 }
-
 .overly a.button:hover,
 .overly a.button:focus-visible {
   background: #00274C;
   color: #fff;
+}
+.photo-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 16px 0;
+}
+.photo-row img {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 .resources a.button {
@@ -166,35 +236,37 @@ main li h4 {
   border-color: #FFCB05;
   border-right: 10px solid #FFCB05;
 }
-
 .resources a.button:hover,
 .resources a.button:focus-visible {
   background: #FFCB05;
+  color: #00274C;
   border-color: #fff;
 }
 
-aside { padding: 16px 0; }
+
+aside {
+  padding: 16px 0;
+  text-align: center;
+}
 aside .button { border-color: #267dab; }
 aside .button:focus-visible { outline-color: #00274C; }
 
-.prep-columns {
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
+
+.prep-columns { gap: 16px; }
 
 .prep-columns li {
-  padding: 10px;
-  border-width: 3px;
-  font-size: 14px;
-  line-height: 1.4;
   display: grid;
   grid-template-rows: 1fr auto;
+  gap: 12px;
+  padding: 20px;
+  border-width: 3px;
+  font-size: 16px;
+  line-height: 1.6;
 }
 .prep-columns a.button {
-  padding: 8px 10px;
-  font-size: 14px;
+  padding: 10px 16px;
+  font-size: 16px;
 }
-
 .process {
   display: grid;
   grid-template-columns: 1fr;
@@ -205,7 +277,7 @@ aside .button:focus-visible { outline-color: #00274C; }
 }
 
 .process li {
-  padding: 16px 20px;
+  padding: 24px 20px;
   background: #fff;
   color: #00274C;
   border: 3px solid #00274C;
@@ -213,19 +285,56 @@ aside .button:focus-visible { outline-color: #00274C; }
 }
 
 footer {
-  padding-top: 10px;
-  background: linear-gradient(4deg, #00274C -80%, #267dab); /* Inspired by gradient footer from Artsy Blue and Turquoise
-by Thea Kitzinger, on StyleStage.dev */
-
-
+  padding: 16px 0;
+  background: linear-gradient(4deg, #00274C -80%, #267dab);
   color: #fff;
   text-align: center;
 }
-footer a { color: white}
-footer img { max-width: 100%; height: auto; }
 
-aside { text-align: center; }
+footer img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 16px auto;
+}
 
+footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+footer a:hover { text-decoration-thickness: 3px; }
+footer a:focus-visible {
+  outline: 3px solid #FFCB05;
+  outline-offset: 2px;
+}
+
+.footer-grid {
+  display: grid;
+  gap: 8px;
+  padding: 0 16px;
+  text-align: center;
+}
+
+footer h2 {
+  padding: 9px 0;
+  font-size: 20px;
+  color: #fff;
+  border-bottom: 2px solid #FFCB05;
+}
+
+footer address { font-style: normal; }
+
+footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+footer li { padding: 6px 0; }
+
+.copyright {
+  margin: 16px;
+  font-size: 14px;
+}
 
 table {
   width: 100%;
@@ -248,4 +357,118 @@ thead th {
 tbody th {
   background: #fff;
   color: #00274C;
+}
+
+.error-page {
+  padding: 48px 16px;
+  text-align: center;
+}
+.error-page h1 {
+  padding-top: 0;
+  font-size: 96px;
+  color: #2F65A7;
+}
+.error-page h2 { display: inline-block; }
+
+@media (min-width: 768px) {
+
+
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    box-sizing: border-box;
+    gap: 8px;
+    padding: 0 24px;
+  }
+  nav a {
+    padding: 18px 16px;
+    font-size: 15px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 32px;
+  }
+  h1 { font-size: 48px; }
+  h2 { font-size: 30px; }
+
+
+  main ul,
+  .overly {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .overly > :last-child { grid-column: auto; }
+
+  main li,
+  .overly article {
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+   main li:hover,
+  .overly article:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 39, 76, 0.25);
+  }
+
+  .prep-columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .prep-columns li {
+    padding: 20px;
+    font-size: 17px;
+  }
+    .photo-row { gap: 24px; }
+  .photo-row img { height: 280px; }
+
+    .feature ul { grid-template-columns: repeat(2, 1fr); }
+
+  .process {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: none;
+    counter-reset: step;
+  }
+  .process li {
+    position: relative;
+    padding-top: 40px;
+  }
+
+  aside { padding: 32px 0; }
+
+
+  footer { padding: 24px 32px; }
+
+ .footer-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+  th, td { padding: 16px 20px; }
+  tbody tr:hover th { background: #fff8d6; }
+}
+
+@media (min-width: 1024px) {
+  .footer-grid { grid-template-columns: repeat(3, 1fr); }
+   .feature {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+  .feature ul { grid-template-columns: 1fr; }
+  .feature img {
+    height: 100%;
+    min-height: 320px;
+  }
+
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+  main li:hover,
+  .overly article:hover {
+    transform: none;
+  }
 }
