@@ -36,11 +36,14 @@
         </section>
 
         <section>
-            <h2>Focus &amp; Objectives</h2>
-            <img src="images/UMSI_DesignJam_GreatLakesWaterSafety_02.JPG"
-                 alt="Students discussing project"
-                 width="600">
-            <ul>
+    <h2>Focus &amp; Objectives</h2>
+    <div class="photo-row">
+        <img src="images/UMSI_DesignJam_GreatLakesWaterSafety_02.JPG"
+             alt="Students discussing project">
+        <img src="images/UMSI_Orientation_082024_017.JPG"
+             alt="Students writing on post-it notes">
+    </div>
+    <ul>
                 <li><strong>Partner Communication:</strong> Draft clear, professional outreach to launch working relationships.</li>
                 <li><strong>First Meetings:</strong> Structure productive kickoff meetings that define roles and project boundaries.</li>
                 <li><strong>Formalizing Agreements:</strong> Document team commitments and scope agreements shared by all stakeholders.</li>
@@ -78,15 +81,44 @@
         </section>
     </main>
 
-    <footer>
-        <p>University of Michigan School of Information | <a href="https://www.si.umich.edu/programs/engaged-learning/about-engaged-learning-office">Engaged Learning Office</a></p>
-        <img src="images/UMSI_signature_marketing_no_U_white.png"
-             alt="UMSI Horizontal Logo."
-             width="300">
-        <address>
-            <a href="mailto:umsi.engagement@umich.edu">umsi.engagement@umich.edu</a>
-        </address>
-        <p>&copy; 2026 Regents of the University of Michigan</p>
-    </footer>
+     <footer>
+    <img src="images/UMSI_signature_marketing_no_U_white.png"
+         alt="University of Michigan School of Information"
+         width="300">
+
+    <div class="footer-grid">
+        <section>
+            <h2>Contact</h2>
+            <address>
+                <p>University of Michigan School of Information<br>
+                   Engaged Learning Office</p>
+                <p><a href="mailto:umsi.engagement@umich.edu">umsi.engagement@umich.edu</a></p>
+            </address>
+        </section>
+
+        <section>
+            <h2>Explore</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="prep.html">Preparing for Your Experience</a></li>
+                <li><a href="start.html">Starting Your Experience</a></li>
+                <li><a href="optimize.html">Optimizing Your Experience</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Learn more</h2>
+            <ul>
+                <li><a href="https://www.si.umich.edu/programs/engaged-learning/about-engaged-learning-office">About the Engaged Learning Office</a></li>
+                <li><a href="https://www.si.umich.edu/">UMSI website</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <p class="copyright">&copy; <span id="year">2026</span> Regents of the University of Michigan</p>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</footer>
 </body>
 </html>
